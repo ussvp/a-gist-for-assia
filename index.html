@@ -1,0 +1,825 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>For Someone Special ♡</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: "Georgia", serif;
+      background:
+        radial-gradient(circle at 20% 20%, #fff4f5 0%, transparent 30%),
+        radial-gradient(circle at 80% 30%, #f5edff 0%, transparent 35%),
+        linear-gradient(135deg, #fdf4f5, #f7f1fb, #eef7f6);
+      color: #66515c;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 25px 120px;
+      position: relative;
+    }
+
+    .glow {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: rgba(255, 190, 205, 0.22);
+      filter: blur(70px);
+      animation: breathe 5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .glow.one {
+      top: -100px;
+      left: -100px;
+    }
+
+    .glow.two {
+      bottom: -120px;
+      right: -100px;
+      background: rgba(204, 187, 235, 0.25);
+      animation-delay: 2s;
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        opacity: .6;
+      }
+
+      50% {
+        transform: scale(1.25);
+        opacity: 1;
+      }
+    }
+
+    .card {
+      position: relative;
+      z-index: 5;
+      width: min(700px, 94vw);
+      padding: 65px 45px;
+      text-align: center;
+
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 35px;
+
+      background: rgba(255,255,255,.57);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow:
+        0 25px 70px rgba(119, 83, 100, .12),
+        inset 0 1px 0 rgba(255,255,255,.9);
+
+      animation: cardIn 1.5s cubic-bezier(.2,.8,.2,1);
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(.94);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .small {
+      font-family: Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 11px;
+      color: #ad8d9b;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 48px;
+      color: #e9a6b5;
+      display: inline-block;
+      animation: heartbeat 2s ease-in-out infinite;
+      margin-bottom: 15px;
+      text-shadow: 0 5px 20px rgba(220, 140, 160, .25);
+    }
+
+    @keyframes heartbeat {
+      0%, 100% {
+        transform: scale(1);
+      }
+
+      15% {
+        transform: scale(1.16);
+      }
+
+      30% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(1.09);
+      }
+
+      60% {
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      font-size: clamp(42px, 8vw, 76px);
+      font-weight: normal;
+      line-height: 1.05;
+      color: #6f5361;
+      margin-bottom: 18px;
+    }
+
+    h1 span {
+      color: #d58c9f;
+      font-style: italic;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #8b747f;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      padding: 15px 30px;
+      border-radius: 100px;
+
+      background: linear-gradient(135deg, #e9a9b8, #cbaedb);
+
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      letter-spacing: 1px;
+
+      box-shadow: 0 10px 25px rgba(201, 145, 165, .25);
+
+      transition: .3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 15px 30px rgba(201, 145, 165, .35);
+    }
+
+    /* =========================
+       PINK SCROLL INDICATOR
+    ========================= */
+
+    .scroll-down {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+
+      color: #d98da3;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      cursor: pointer;
+      z-index: 10;
+
+      animation: scrollFloat 2s ease-in-out infinite;
+    }
+
+    .scroll-arrow {
+      width: 34px;
+      height: 52px;
+
+      border: 2px solid #e5a0b3;
+      border-radius: 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+      padding-top: 8px;
+
+      background: rgba(255, 220, 228, .25);
+
+      box-shadow:
+        0 0 15px rgba(229, 160, 179, .35),
+        inset 0 0 15px rgba(255,255,255,.4);
+    }
+
+    .scroll-arrow::before {
+      content: "";
+      width: 6px;
+      height: 10px;
+
+      border-radius: 10px;
+
+      background: #e28fa7;
+
+      box-shadow: 0 0 10px #f2b5c5;
+
+      animation: scrollDot 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollDot {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+
+      70% {
+        transform: translateY(22px);
+        opacity: .2;
+      }
+
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scrollFloat {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, -7px);
+      }
+    }
+
+    /* =========================
+       SECOND SECTION
+    ========================= */
+
+    .second-section {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 80px 25px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(255, 202, 215, .35),
+          transparent 55%
+        ),
+        linear-gradient(
+          180deg,
+          #fff5f7,
+          #f8eef8
+        );
+    }
+
+    .letter {
+      width: min(650px, 94vw);
+
+      padding: 55px 40px;
+
+      text-align: center;
+
+      border-radius: 30px;
+
+      background: rgba(255,255,255,.65);
+
+      border: 1px solid rgba(255,255,255,.9);
+
+      box-shadow:
+        0 20px 60px rgba(140, 92, 115, .12);
+
+      animation: letterAppear linear;
+      animation-timeline: view();
+      animation-range: entry 10% cover 35%;
+    }
+
+    .letter-heart {
+      font-size: 45px;
+      color: #e5a0b3;
+      margin-bottom: 20px;
+    }
+
+    .letter h2 {
+      font-size: clamp(34px, 6vw, 52px);
+      font-weight: normal;
+      color: #735664;
+      margin-bottom: 25px;
+    }
+
+    .letter p {
+      font-size: 18px;
+      line-height: 2;
+      color: #8b747f;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-size: 22px;
+      color: #d18ba0;
+      font-style: italic;
+    }
+
+    @keyframes letterAppear {
+      from {
+        opacity: 0;
+        transform: translateY(80px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================
+       THIRD SECTION
+    ========================= */
+
+    .final-section {
+      min-height: 80vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      padding: 80px 25px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f9e9ee,
+          #eee6f7
+        );
+    }
+
+    .final-content {
+      max-width: 650px;
+    }
+
+    .final-content h2 {
+      font-size: clamp(40px, 7vw, 65px);
+      font-weight: normal;
+      color: #735664;
+      margin-bottom: 25px;
+    }
+
+    .final-content h2 span {
+      color: #d68da3;
+      font-style: italic;
+    }
+
+    .final-content p {
+      color: #8d7580;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .big-heart {
+      font-size: 80px;
+      color: #e3a0b2;
+
+      margin-top: 30px;
+
+      animation: heartbeat 2s infinite;
+
+      text-shadow:
+        0 0 25px rgba(226, 143, 167, .4);
+    }
+
+    /* =========================
+       HIDDEN MESSAGE
+    ========================= */
+
+    .message {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 1.2s ease;
+    }
+
+    .message.show {
+      max-height: 400px;
+      opacity: 1;
+      margin-top: 30px;
+    }
+
+    .message-inner {
+      padding: 25px;
+      border-radius: 22px;
+
+      background: rgba(255,255,255,.5);
+
+      border: 1px solid rgba(255,255,255,.7);
+    }
+
+    .message p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    .floating-heart {
+      position: fixed;
+      bottom: -50px;
+
+      color: rgba(220, 150, 170, .45);
+
+      font-size: 20px;
+
+      animation: floatUp linear forwards;
+
+      pointer-events: none;
+
+      z-index: 1;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: .8;
+      }
+
+      90% {
+        opacity: .5;
+      }
+
+      100% {
+        transform: translateY(-110vh) rotate(35deg);
+        opacity: 0;
+      }
+    }
+
+    /* =========================
+       SPARKLES
+    ========================= */
+
+    .sparkle {
+      position: fixed;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: white;
+
+      box-shadow: 0 0 12px white;
+
+      animation: sparkle 2s ease-in-out infinite;
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: 0;
+        transform: scale(.5);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.4);
+      }
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 30px 18px 110px;
+      }
+
+      .card {
+        padding: 45px 25px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .heart {
+        font-size: 40px;
+      }
+
+      .letter {
+        padding: 45px 25px;
+      }
+
+      .letter p {
+        font-size: 16px;
+      }
+
+      .scroll-down {
+        bottom: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       FIRST SCREEN
+  ========================= -->
+
+  <section class="page" id="home">
+
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+
+    <div class="card">
+
+      <div class="small">
+        A little something for you my sweet sweet Assia
+      </div>
+
+      <div class="heart">
+        ♡
+      </div>
+
+      <!-- CHANGE THEIR NAME HERE -->
+      <h1>
+        Happy Birthday,<br>
+        <span>Beautiful Soul Assia </span>
+      </h1>
+
+      <p class="subtitle">
+        Some people come into our lives and quietly make
+        everything a little brighter.
+        Today is a celebration of you —
+        and how much you mean to me.
+      </p>
+
+      <button onclick="revealMessage()">
+        Open your little surprise ♡
+      </button>
+
+      <div class="message" id="message">
+
+        <div class="message-inner">
+
+          <!-- WRITE YOUR PERSONAL MESSAGE HERE -->
+
+          <p>
+            I hope this year brings you the kind of happiness
+            you deserve — the peaceful kind, the unexpected kind,
+            and the kind that stays.
+            <br><br>
+
+            Thank you for being someone so special to me.
+            I'm genuinely grateful that you exist in my world.
+          </p>
+
+          <div class="signature">
+            With all my heart ♡
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PINK SCROLL BUTTON -->
+
+    <div
+      class="scroll-down"
+      onclick="document.getElementById('letter').scrollIntoView()"
+    >
+
+      <div class="scroll-arrow"></div>
+
+      <span>Scroll</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SECOND SECTION
+  ========================= -->
+
+  <section class="second-section" id="letter">
+
+    <div class="letter">
+
+      <div class="letter-heart">
+        ♡
+      </div>
+
+      <h2>
+        A little letter
+      </h2>
+
+      <p>
+        There are some people who are difficult to put
+        into words because words never quite seem enough.
+
+        <br><br>
+
+        You're one of those people.
+
+        <br><br>
+
+        I hope you always remember how appreciated,
+        loved, and special you are.
+
+        <br><br>
+        Assia,I just want you to know
+        that having you in my life is something
+        I will always be grateful for.
+      </p>
+
+      <div class="signature">
+        Happy Birthday ♡
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FINAL SECTION
+  ========================= -->
+
+  <section class="final-section">
+
+    <div class="final-content">
+
+      <h2>
+        Here's to <span>you.</span>
+      </h2>
+
+      <p>
+        To more laughter,
+        more beautiful memories,
+        and another year of being wonderfully you.
+      </p>
+
+      <div class="big-heart">
+        ♥
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    /* =========================
+       REVEAL MESSAGE
+    ========================= */
+
+    function revealMessage() {
+
+      const message =
+        document.getElementById("message");
+
+      const button =
+        document.querySelector("button");
+
+      message.classList.toggle("show");
+
+      if (message.classList.contains("show")) {
+
+        button.innerHTML =
+          "You deserve all the love ♡";
+
+      } else {
+
+        button.innerHTML =
+          "Open your little surprise ♡";
+
+      }
+    }
+
+
+    /* =========================
+       FLOATING HEARTS
+    ========================= */
+
+    function createHeart() {
+
+      const heart =
+        document.createElement("div");
+
+      heart.className =
+        "floating-heart";
+
+      heart.innerHTML =
+        Math.random() > .5 ? "♡" : "♥";
+
+      heart.style.left =
+        Math.random() * 100 + "vw";
+
+      heart.style.fontSize =
+        (14 + Math.random() * 22) + "px";
+
+      const duration =
+        7 + Math.random() * 8;
+
+      heart.style.animationDuration =
+        duration + "s";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+
+        heart.remove();
+
+      }, duration * 1000);
+    }
+
+    setInterval(createHeart, 700);
+
+
+    /* =========================
+       SPARKLES
+    ========================= */
+
+    function createSparkle() {
+
+      const sparkle =
+        document.createElement("div");
+
+      sparkle.className =
+        "sparkle";
+
+      sparkle.style.left =
+        Math.random() * 100 + "vw";
+
+      sparkle.style.top =
+        Math.random() * 100 + "vh";
+
+      sparkle.style.animationDelay =
+        Math.random() * 2 + "s";
+
+      document.body.appendChild(sparkle);
+
+      setTimeout(() => {
+
+        sparkle.remove();
+
+      }, 2500);
+    }
+
+    setInterval(createSparkle, 500);
+
+  </script>
+
+</body>
+</html>
